@@ -43,9 +43,29 @@
 
                 <asp:ImageButton ID="ImageButton1" CssClass="hamberger" ImageUrl="~/images/hamberger.png" AlternateText="No Image available" Height="50px" Width="50px" OnClick="hambergerButton_Click" runat="server"
                     style="border: 2px solid var(--primary); border-radius: 20%; box-shadow: 0 0 5px rgba(61, 207, 211, 1);"
-                    />
+                    /> 
 
-                <div class="mobile-nav">
+                <asp:Panel ID="pnlMobileNav" runat="server" CssClass="mobile-nav">
+                    <!-- Your mobile navigation content goes here -->
+
+                    <asp:ImageButton ID="cancle_pnl" CssClass="times" ImageUrl="./images/times.png" AlternateText="No Image available" Width="25px" OnClick="hambergerButton_Click" runat="server"
+                        Style="border: 2px solid var(--primary); border-radius: 20%; box-shadow: 0 0 5px rgba(61, 207, 211, 1);" />
+
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#achievement">Achievements</a></li>
+                        <li><a href="#photography_id">Photography</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+
+
+                </asp:Panel>
+
+
+                <%--                <div class="mobile-nav">
                     <button class="times">
                         <img src="./images/times.png" alt=""></button>
                     <ul>
@@ -57,7 +77,7 @@
                         <li><a href="#photography_id">Photography</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                </div>
+                </div>--%>
 
                 <header>
                     <div class="container">

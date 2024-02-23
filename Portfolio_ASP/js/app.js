@@ -18,9 +18,9 @@ $(document).ready(function () {
     //    $('.mobile-nav').toggleClass('open');
     //});
     
-    //$('.times').click(function () {
-    //    $('.mobile-nav').removeClass('open');
-    //});
+    $('.times').click(function () {
+        $('.mobile-nav').removeclass('open');
+    });
 
     //$('.mobile-nav ul li a').click(function () {
     //    $('.mobile-nav').removeClass('open');

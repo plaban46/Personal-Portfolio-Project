@@ -12,10 +12,11 @@ namespace Portfolio_ASP
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }      
+        }   
+
         protected void hambergerButton_Click(object sender, EventArgs e)
         {
-            Response.Write("<script>alert('Button Clicked');</script>");
+            pnlMobileNav.CssClass = pnlMobileNav.CssClass.Contains("open") ? "mobile-nav" : "mobile-nav open";
         }
     }
 }
