@@ -37,9 +37,13 @@
                     <img src="./images/logo.png" alt="">
                 </div>
 
-                <button class="hamberger" onclick="hambergerButton_Click">
+<%--                <button class="hamberger" onclick="hambergerButton_Click">
                     <img src="./images/hamberger.png" alt="">
-                </button>
+                </button>--%>
+
+                <asp:ImageButton ID="ImageButton1" CssClass="hamberger" ImageUrl="~/images/hamberger.png" AlternateText="No Image available" Height="50px" Width="50px" OnClick="hambergerButton_Click" runat="server"
+                    style="border: 2px solid var(--primary); border-radius: 20%; box-shadow: 0 0 5px rgba(61, 207, 211, 1);"
+                    />
 
                 <div class="mobile-nav">
                     <button class="times">
