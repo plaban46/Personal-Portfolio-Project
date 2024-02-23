@@ -26,186 +26,238 @@
   <script src="./js/app.js"></script> 
 </head>
 
-<body>
-  <header class="header">
-    <a href="#" class="logo">Portfolio</a>
-
-    <nav class="navbar">
-      <a href="#" id="homeLink" class="active">Home</a>
-      <a href="#" id="aboutLink">About</a>
-      <a href="#" id="skillLink">Skill</a>
-      <a href="#" id="portfolioLink">Portfolio</a>
-      <a href="#" id="contactLink">Contact</a>
-    </nav>
-
-    <!-- Custom Dialog -->
-      <div class="overlay" id="overlay"></div>
-      <div class="custom-dialog" id="customDialog">
-        <p>Button is clicked</p>
-        <button onclick="closeDialog()">Close</button>
-      </div>
-  </header>
-
-  <section class="home">
-    <div class="home-content">
-      <h3>Hello, It's Me</h3>
-      <h1>Plaban Das</h1>
-      <h3>And I'm a <span class="text"></span> </h3>
-      <p>I's a web Designer with exensive experience for over 3 years.
-         expertise is to create a website design, Forntend design , and many more....
-      </p>
-      <div class="home-sci">
-        <a href="#" style="--i:6"><i class='bx bxl-facebook'></i></a>
-        <a href="#" style="--i:7"><i class='bx bxl-instagram'></i></a>
-        <a href="#" style="--i:8"><i class='bx bxl-whatsapp'></i></a>
-        <a href="#" style="--i:9"><i class='bx bxl-tiktok'></i></a>
-      </div>
-      <a href="#" id="more_about_me" class="btn-box" onclick="showMore()">More About Me</a>
+<body> 
+  <div class="site-main-wrapper">
+    <div class="responsive_branding">
+        <img src="./images/logo.png" alt="" >
     </div>
-    <!-- </div> -->
-    <span class="home-imgHover"></span>
-  </section> 
-
-  <section class="about" id="about">
-
-    <div class="about-img">
-      <img src="/Images/middle_profile.png" alt="">
+    <button class="hamberger">
+        <img src="./images/hamberger.png" alt="">
+    </button>
+    <div class="mobile-nav">
+        <button class="times"><img src="./images/times.png" alt=""></button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievement">Achievements</a></li>
+            <li><a href="#photography_id">Photography</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
 
-    <div class="about-text">
-      <h2>About <span>Me</span></h2>
-      <h4>Full Stack Developer!</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sapiente, temporibus quia atque laborum
-        tempore eaque accusamus nulla id nisi hic corporis. Nesciunt id pariatur voluptate, suscipit numquam dolore
-        amet.</p>
-
-      <a href="#" class="btn-box">More About Me</a>
-    </div>
-
-  </section>
-
-  <section class="services" id="services">
-    <div class="container">
-        <h1 class="sub-title">My <span>Services</span></h1>
-        <div class="services-list">
-           <div>
-              <i class="bx bx-code" style="color: #00eeff"></i>
-              <h2>UI/UX Design</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ex magnam pariatur, reiciendis repellat similique, esse qui neque rem aperiam vitae explicabo consequatur quos, fugit quam dicta voluptatum perspiciatis? Vero.</p>
-              <a href="#" class="read">Learn More</a>
-           </div>
-           <div>
-              <i class="bx bx-crop" style="color: #00eeff"></i>
-              <h2>UI/UX Design</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ex magnam pariatur, reiciendis repellat similique, esse qui neque rem aperiam vitae explicabo consequatur quos, fugit quam dicta voluptatum perspiciatis? Vero.</p>
-              <a href="#" class="read">Learn More</a>
-           </div>
-           <div>
-              <i class="bx bxl-apple" style="color: #00eeff"></i>
-              <h2>UI/UX Design</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ex magnam pariatur, reiciendis repellat similique, esse qui neque rem aperiam vitae explicabo consequatur quos, fugit quam dicta voluptatum perspiciatis? Vero.</p>
-              <a href="#" class="read">Learn More</a>
-           </div>
-
-        </div> 
-    </div>
-  </section>
-
-  <h1 class="sub-title">My <span>Skills</span></h1>
-  <section>
-    <div class="container1" id="Skills">
-
-        <h1 class="heading1">Technical Skills</h1>
-        <div class="Technical-bars">
-          
-          <div class="bar"><i style="color: #c95d2e;" class='bx bxl-html5'></i>
-            <div class="info">
-              <span>HTML</span>
+    <header>
+        <div class="container">
+            <nav id="main-nav" class="flex items-center justify-between">
+                <div class="left flex items-center">
+                    <div class="branding">
+                        <img src="./images/logo.png" alt="" >
+                    </div>
+                    <div class="left">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#timeline">Timeline</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#achievement">Achievements</a>
+                        <a href="#photography_id">Photography</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <button id="contactButton" class="btn btn-primary">Contact</button>
+                </div>
+            </nav>
+            <div id="home" class="hero flex items-center justify-between">
+                <div class="left flex-1 flex justify-center">
+                    <img src="./images/man111.png" alt="">
+                </div>
+                <div class="right flex-1">
+                    <h1>Plaban Das</h1>
+                    <h6>And I’m a</h6>
+                    <h2><span class="typing"></span>&nbsp;</h2>
+                    <p>My name is Plaban Das. Now I am reading at Khulna University of Engineering and Technology at computer science and engineering department.</p>
+                    <div>
+                        <button id="downloadCvButton" class="btn btn-secondary">DOWNLOAD CV</button>
+                    </div>
+                </div>
             </div>
-            <div class="progress-line html">
-              <span></span>
-            </div>
-          </div>
-          <div class="bar"><i style="color: #147bbc;" class='bx bxl-css3'></i>
-            <div class="info">
-              <span>CSS</span>
-            </div>
-            <div class="progress-line css">
-              <span></span>
-            </div>
-          </div>
-          <div class="bar"><i style="color: #b0bc1e;" class='bx bxl-javascript'></i>
-            <div class="info">
-              <span>Javascript</span>
-            </div>
-            <div class="progress-line javascript">
-              <span></span>
-            </div>
-          </div>
-          <div class="bar"><i style="color: #c32ec9;" class='bx bxl-javascript'></i>
-            <div class="info">
-              <span>Python</span>
-            </div>
-            <div class="progress-line python">
-              <span></span>
-            </div>
-          </div>
-          <div class="bar"><i style="color: #69bcbc;" class='bx bxl-javascript'></i>
-            <div class="info">
-              <span>React</span>
-            </div>
-            <div class="progress-line react">
-              <span></span>
-            </div>
-          </div>
         </div>
-    </div>
+    </header>
 
+    <section id="about" class="about">
+        <div class="container flex items-center about-inner-wrap">
+            <div class="flex-1">
+                <img class="about-me-img " src="./images/man2.png" alt="">
+            </div>
+            <div class="flex-1 right">
+                <h1>About <span>Me</span></h1>
+                <h3>Hello! i’m Plaban Das</h3>
+                <p>
+                    Haridaskati Government Primary School was my first school where my academic journey was started. I was admitted to Kapilmuni Sahachari Vidyamandir for Secondary School Certificate Examination and I continued to Cantonment College Jashore for my intermediate college education.
+                    I am proud to be part of the prestigious Khulna University of Engineering & Technology<br> <br>
+                    I am currently third year first term student in the Department of Computer Science and Engineering at Khulna University of Engineering & Technology, where I am actively pursuing my studies and exploring various aspects of the field.<br> <br>
+                </p>
+                <div class="social">
+                    <a href="#" target="_blank"><img src="./images/linkedin.png" alt="" width="40" height="40"></a> 
+                    <a href="#" target="_blank"><img src="./images/insta.png" alt="" width="40" height="40"></a> 
+                    <a href="#" target="_blank"><img src="./images/x.png" alt="" width="40" height="40"></a> 
+                    <a href="#" target="_blank"><img src="./images/github.png" alt="" width="40" height="40"></a>
+                </div>
+            </div>
+        </div>
+    </section>
     
-
-    <div class="container1">
-      <h1 class="heading1">Professional Skills</h1>
-      <div class="radial-bars">
-        <div class="radial-bar">
-          <svg x="0px" y="0px" viewBox="0 0 200 200">
-            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-            <circle class="path path-1" cx="100" cy="100" r="80"></circle>
-          </svg>
-          <div class="percentage">90%</div>
-          <div class="text">Creativity</div>
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h1 class="section-heading">Explore My <br><br><br> <span>Timeline</span></h1>
+            <div class="card-wrapper">
+                <div class="card">
+                    <img src="./images/KUET logo.png" alt="" >
+                    <h2>BSc in Computer Science and Engineering</h2>
+                    <p>Khulna University of Engineering & Technology, Khulna, Bangladesh</p>
+                    <h3>2022-Present</h3>
+                </div>
+                <div class="card">
+                    <img src="./images/ccj.png" alt="" >
+                    <h2>Higher Secondary Certificate Examination</h2>
+                    <p>Cantonment College, Jashore</p>
+                    <h3>2020</h3>
+                </div>
+                <div class="card">
+                    <img src="./images/ksb.png" alt="">
+                    <h2>Secondary School Certificate Examination</h2>
+                    <p>Kapilmuni Sahachari Vidyamandir</p>
+                    <h3>2018</h3>
+                </div>
+                <div class="card">
+                    <img src="./images/ksb.png" alt="">
+                    <h2>Junior School Certificate Examination</h2>
+                    <p>Kapilmuni Sahachari Vidyamandir</p>
+                    <h3>2015</h3>
+                </div>
+            </div>
         </div>
-        <div class="radial-bar">
-          <svg x="0px" y="0px" viewBox="0 0 200 200">
-            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-            <circle class="path path-2" cx="100" cy="100" r="80"></circle>
-          </svg>
-          <div class="percentage">85%</div>
-          <div class="text">Communication</div>
-        </div>
-        <div class="radial-bar">
-          <svg x="0px" y="0px" viewBox="0 0 200 200">
-            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-            <circle class="path path-3" cx="100" cy="100" r="80"></circle>
-          </svg>
-          <div class="percentage">85%</div>
-          <div class="text">Problem Solving</div>
-        </div>
-        <div class="radial-bar">
-          <svg x="0px" y="0px" viewBox="0 0 200 200">
-            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-            <circle class="path path-4" cx="100" cy="100" r="80"></circle>
-          </svg>
-          <div class="percentage">90%</div>
-          <div class="text">TeamWork</div>
-        </div>
-      </div>
-    </div>
     </section>
 
+    <section id="projects" class="projects">
+        <div class="container">
+            <p>Browse My Recent </p>
+            <h1 class="section-heading"><span>Projects</span></h1>
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="./images/project1.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h1>Homezone</h1>
+                        <h1><span>2023</span></h1>
+                        <p>This app will easy our boring life by finding house in rent and at the same time this can be used for buying blank house plot. This app will also provide your favourite house in specific place with your own choice.</p>
+                        <a href="https://github.com/plabandas/HomeZone" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="./images/project2.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h1>PocketGuard</h1>
+                        <h1><span>2021</span></h1>
+                        <p>This app will easy our boring life by managing your income and expense and at the same time this can be used for setting your goal. This app will also provide you parental control.</p>
+                        <a href="https://github.com/plabandas/PocketGuard_Personal_Finance" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="./images/project3.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h1>Current Location App</h1>
+                        <h1><span>2023</span></h1>
+                        <p>The current location app is a digital tool that utilizes GPS technology to pinpoint a user's precise geographic coordinates on a map in real-time. It offers navigation guidance, nearby point-of-interest information, and location sharing features, enhancing convenience and safety for users in various activities and scenarios.</p>
+                        <a href="https://github.com/plabandas/Current_Location_App" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="./images/project4.jpg" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h1>NewsPortal Project</h1>
+                        <h1><span>2018</span></h1>
+                        <p>The news portal project creates an online platform for widespread news dissemination. It includes website or app development, offering articles, videos, and multimedia content on various topics. Features like user registration, content management, comments, and social media integration aim to provide comprehensive news coverage and user engagement opportunities.</p>
+                        <a href="https://github.com/plabandas/Newspapers_USA" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="achievement" class="achievement">
+        <div class="container">
+            <p>Find Out About My </p>
+            
+            <h1 class="section-heading_special"><span>Achievements <br></span> </h1> 
+            <h1 class="section-heading_special"><span>Top 8 Non-Academic Certificates Are Added<br></span> </h1> 
+            <h2 class="section-heading_special"><span>Slide for all Certificates</span></span> </h2> 
+            
+            <div class="slider">
+                <div class="slide">
 
+                    <span>Dean's Award</span>
+                    <img src="./images/certificates/dean_cer.jpg" alt="">
+                </div> 
 
+                <div class="slide">
 
-  <script src="main.js"></script>
+                    <span>Creative Talent Search Competition 2013</span> 
+                    <img src="./images/certificates/cer_2013.jpg" alt="">
+                </div> 
+
+                <div class="slide">
+
+                    <span>Creative Talent Search Competition 2014</span> 
+                    <img src="./images/certificates/cer_2014.jpg" alt="">
+                </div> 
+
+                <div class="slide">
+
+                    <span>Creative Talent Search Competition 2016</span> 
+                    <img src="./images/certificates/cer_2016.jpg" alt="">
+                </div> 
+
+                <div class="slide">
+
+                    <span>Complete Android App Development Masterclass</span>
+                    <img src="./images/certificates/android_cer.jpg" alt="">
+                </div> 
+
+                <div class="slide">
+                    
+                    <span>Mobile App Marketing & App Store Optimization</span>
+                    <img src="./images/certificates/aso_cer.jpg" alt="">
+                </div> 
+
+                <div class="slide">
+                    
+                    <span>Freelancing From Home</span>
+                    <img src="./images/certificates/freelancing_cer.jpg" alt="">
+                </div> 
+
+                <div class="slide">
+                    <span>Complete Ethical Hacking & Cyber Security Masterclass</span>
+                    <img src="./images/certificates/techethical.jpg" alt="">
+                </div> 
+
+            </div>
+            <div class="slider-dots"></div>
+        </div>
+    </section>
+
+    <section class="section_gap"> 
+    </section>
+
+</div>
 </body>
 
 </html>
