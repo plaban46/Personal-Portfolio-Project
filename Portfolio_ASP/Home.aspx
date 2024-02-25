@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -37,13 +37,12 @@
                     <img src="./images/logo.png" alt="">
                 </div>
 
-<%--                <button class="hamberger" onclick="hambergerButton_Click">
+                <%--                <button class="hamberger" onclick="hambergerButton_Click">
                     <img src="./images/hamberger.png" alt="">
                 </button>--%>
 
                 <asp:ImageButton ID="ImageButton1" CssClass="hamberger" ImageUrl="~/images/hamberger.png" AlternateText="No Image available" Height="50px" Width="50px" OnClick="hambergerButton_Click" runat="server"
-                    style="border: 2px solid var(--primary); border-radius: 20%; box-shadow: 0 0 5px rgba(61, 207, 211, 1);"
-                    /> 
+                    Style="border: 2px solid var(--primary); border-radius: 20%; box-shadow: 0 0 5px rgba(61, 207, 211, 1);" />
 
                 <asp:Panel ID="pnlMobileNav" runat="server" CssClass="mobile-nav">
                     <!-- Your mobile navigation content goes here -->
@@ -58,12 +57,10 @@
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#achievement">Achievements</a></li>
                         <li><a href="#photography_id">Photography</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-
-
+                        <li><a href="Login.aspx">Contact</a></li>
+                    </ul> 
                 </asp:Panel>
-
+                 
 
                 <%--                <div class="mobile-nav">
                     <button class="times">
@@ -93,8 +90,8 @@
                                     <a href="#projects">Projects</a>
                                     <a href="#achievement">Achievements</a>
                                     <a href="#photography_id">Photography</a>
-                                    <a href="#contact">Contact</a>
-                                </div>
+                                    <a href="Login.aspx">Contact</a>
+                                </div> 
                             </div>
                             <div class="right">
                                 <button id="contactButton" class="btn btn-primary">Contact</button>
