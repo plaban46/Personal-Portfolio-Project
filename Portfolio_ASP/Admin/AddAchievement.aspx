@@ -3,16 +3,91 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <title>Add Item</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        .table-text{
-            color:black;
+        .table-text {
+            color: black;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .col-sm-2,
+        .col-sm-8 {
+            flex: 0 0 auto; /* Ensure columns don't grow or shrink */
+            width: auto;
+        }
+
+        .form-group-sm {
+            margin-bottom: 15px;
+        }
+
+        .background-white {
+            background-color: orange;
+        }
+        .some-styles{
+            border-radius:5px; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+        }
+
+            button:hover {
+                background-color: #218838;
+            }
+
+        .btn-lg {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .row {
+                flex-direction: column; /* Stack columns vertically on smaller screens */
+                align-items: center; /* Center align content */
+            }
+
+            .col-sm-2,
+            .col-sm-8 {
+                width: 100%; /* Full width for columns on smaller screens */
+            }
+        }
+
+        .btn-success {
+            background-color: #28a745; /* Green */
+            border-color: #28a745;
+            color: #ffffff; /* White */
+        }
+
+        .btn-success:hover {
+            background-color: #218838; /* Darker green on hover */
+            border-color: #1e7e34;
+            color: #ffffff; /* White */
+        }
+        .gridview-font {
+            font-family: Arial, sans-serif; /* Specify your preferred font */
+            font-size: 17px; 
         }
     </style>
 
@@ -27,15 +102,15 @@
             <div class="form-group-sm">
                 <label>Achievement Title</label>
                 <asp:TextBox ID="txtItemName" CssClass="form-control" runat="server"></asp:TextBox>
-            </div>   
+            </div>
             <div class="form-group-sm">
                 <label>Achievement Image</label>
-                <asp:FileUpload ID="FileUpload1" CssClass="form-control" runat="server" />
-            </div>    
+                <asp:FileUpload ID="FileUpload1" CssClass="form-control background-white" runat="server" />
+            </div>
             <div class="form-group-sm">
                 <p>
                 </p>
-                <asp:Button ID="btnAddItem" CssClass="btn btn-success btn-lg" runat="server" Text="ADD ITEM"
+                <asp:Button ID="btnAddItem" CssClass="btn btn-success btn-lg " runat="server" Text="ADD ITEM"
                     OnClick="btnAddItem_Click" />
                 <p>
                 </p>
@@ -44,10 +119,10 @@
         <div class="col-sm-2">
         </div>
     </div>
-     <div class="row">
+    <div class="row">
         <div class="col-sm-12">
             <div class="table table-responsive">
-                <asp:GridView ID="GridView1" CssClass="table table-condensed table-text" runat="server" AllowPaging="True"
+                <asp:GridView ID="GridView1" CssClass="background-white table-text gridview-font some-styles" runat="server" AllowPaging="True"
                     AutoGenerateColumns="False" DataKeyNames="IID" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

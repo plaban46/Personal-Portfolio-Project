@@ -50,6 +50,7 @@ namespace Portfolio_ASP.Admin
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Item added successfully');</script>");
+                txtItemName.Text = string.Empty; 
 
 
             }
