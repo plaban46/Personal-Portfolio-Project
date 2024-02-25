@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Portfolio_ASP.Admin.Admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="Portfolio_ASP.Admin.Admin" %>
 
 <!DOCTYPE html>
 
