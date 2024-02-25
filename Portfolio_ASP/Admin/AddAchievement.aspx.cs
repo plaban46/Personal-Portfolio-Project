@@ -49,7 +49,7 @@ namespace Portfolio_ASP.Admin
                 cmd.Parameters.AddWithValue("@IMg", "~/img/" + FileUpload1.FileName); 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Item added successfully');</script>");
+                Response.Write("<script>alert('Achievement added successfully');</script>");
                 txtItemName.Text = string.Empty; 
 
 

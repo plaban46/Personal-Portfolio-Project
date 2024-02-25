@@ -29,7 +29,7 @@ namespace Portfolio_ASP
             try
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString);
-                SqlCommand cmd = new SqlCommand("Insert into tblUser(Name,Address,City,Mobile,Email,Password,Gender) values(@Name,@Address,@City,@Mobile,@Email,@Password,@Gender)", con);
+                SqlCommand cmd = new SqlCommand("Insert into UserLst(Username,Address,City,Mobile,Email,Password,Gender) values(@Name,@Address,@City,@Mobile,@Email,@Password,@Gender)", con);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -46,6 +46,7 @@ namespace Portfolio_ASP
                 con.Close();
                 clr();
                 Response.Write("<script>alert('Success')</script>");
+                Response.Redirect("~/Login.aspx");
             }
             catch (Exception ex)
             {

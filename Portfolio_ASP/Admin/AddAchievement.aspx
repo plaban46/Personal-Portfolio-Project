@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <title>Add Item</title>
+    <title>Add Achievements</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -110,7 +110,7 @@
             <div class="form-group-sm">
                 <p>
                 </p>
-                <asp:Button ID="btnAddItem" CssClass="btn btn-success btn-lg " runat="server" Text="ADD ITEM"
+                <asp:Button ID="btnAddItem" CssClass="btn btn-success btn-lg " runat="server" Text="ADD Achievement"
                     OnClick="btnAddItem_Click" />
                 <p>
                 </p>
