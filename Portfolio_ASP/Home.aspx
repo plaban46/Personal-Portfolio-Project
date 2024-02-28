@@ -28,6 +28,45 @@
 
     <script src="./js/app.js"></script>
 
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container_feedback {
+        max-width: 80%;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container_feedback h2 {
+        margin-bottom: 20px;
+        color:darkblue;
+    }
+
+    .feedback {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .feedback h3 {
+        margin-top: 0;
+    }
+
+    .feedback p {
+        margin-bottom: 5px;
+    }
+
+</style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -365,23 +404,24 @@
 
                 <section id="contact" class="contact contact-section">
                     <div class="container">
-                        <p>Hay !!</p>
-                        <h1 class="section-heading">Contact <span>Me</span></h1>
-                        <form>
-                            <div class="input-wrap">
-                                <input type="text" name="user" placeholder="Your Name *">
-                                <input type="email" name="email" placeholder="Your Email *">
-                            </div>
-                            <div class="input-wrap-2">
-                                <input type="text" name="subject" placeholder="Your Subject...">
-                                <textarea name="message" id="" cols="30" rows="8" placeholder="Your Message..."></textarea>
-                            </div>
-                            <div class="btn-wrapper">
-                                <button class="btn btn-primary" type="submit">Send Message</button>
-                            </div>
-                        </form>
+                        <p>hay !!</p>
+                        <h1 class="section-heading">Contribute To My <span>Research</span></h1>
                     </div>
                 </section>
+                 
+
+                <div class="container_feedback">
+                    <h2><span>Researches :: </span></h2>
+                    <% foreach (var feedback in FeedbackList)
+                        { %>
+                    <div class="feedback">
+                        <h3><%= feedback.Title %></h3>
+                        <p><strong>Writer Name:</strong> <%= feedback.WriterName %></p>
+                        <p><strong>Topic Name:</strong> <%= feedback.TopicName %></p>
+                        <p><strong>Description:</strong> <%= feedback.Description %></p>
+                    </div>
+                    <% } %>
+                </div>
 
                 <footer>
                     <div class="copyright">
