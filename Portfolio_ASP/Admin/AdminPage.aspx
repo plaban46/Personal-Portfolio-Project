@@ -6,6 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <p>this is home page for admin</p>
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="Plaban Das"></asp:Label>
 
 </asp:Content>

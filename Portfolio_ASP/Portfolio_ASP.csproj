@@ -70,6 +70,7 @@
     <Content Include="Admin\AddAchievement.aspx" />
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\AdminPage.aspx" />
+    <Content Include="Admin\Update_info.aspx" />
     <Content Include="Admin_User\UserPage.aspx" />
     <Content Include="Admin_User\Topic.aspx" />
     <Content Include="css\home.css" />
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="Admin\AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Update_info.aspx.cs">
+      <DependentUpon>Update_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Update_info.aspx.designer.cs">
+      <DependentUpon>Update_info.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_User\MasterPageUser.Master.cs">
       <DependentUpon>MasterPageUser.Master</DependentUpon>
