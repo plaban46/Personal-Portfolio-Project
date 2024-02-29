@@ -138,7 +138,8 @@
                         </nav>
                         <div id="home" class="hero flex items-center justify-between">
                             <div class="left flex-1 flex justify-center">
-                                <img src="./images/man111.png" alt="">
+                                <%--<img src="./images/man111.png" alt="">--%>
+                                <asp:Image ID="home_image_view" runat="server" Visible="false" /> 
                             </div>
                             <div class="right flex-1">
                                 <h1>Plaban Das</h1>
@@ -156,7 +157,9 @@
                 <section id="about" class="about">
                     <div class="container flex items-center about-inner-wrap">
                         <div class="flex-1">
-                            <img class="about-me-img " src="./images/man2.png" alt="">
+<%--                            <img class="about-me-img " src="./images/man2.png" alt="">--%>
+                            <asp:Image ID="about_image_view" CssClass="about-me-img" runat="server" Visible="false" />
+
                         </div>
                         <div class="flex-1 right">
                             <h1>About <span>Me</span></h1>
@@ -386,7 +389,9 @@
                 <section id="about" class="about">
                     <div class="container flex items-center about-inner-wrap">
                         <div class="flex-1">
-                            <img class="about-me-img " src="./images/msg_photo.png" alt="">
+<%--                            <img class="about-me-img " src="./images/msg_photo.png" alt="">--%>
+                            <asp:Image ID="thanks_image_view" CssClass="about-me-img" runat="server" Visible="false" />
+
                         </div>
                         <div class="flex-1 right">
                             <h1>Thank you <span></span></h1>

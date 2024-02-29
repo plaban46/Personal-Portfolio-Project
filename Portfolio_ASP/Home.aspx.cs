@@ -26,6 +26,7 @@ namespace Portfolio_ASP
             home_description();
             about_text();
             thanks_message();
+            home_about_thanks_image_loading();
         }
 
         private void PopulateFeedbackList()
@@ -172,7 +173,60 @@ namespace Portfolio_ASP
                 Response.Write("An error occurred: " + ex.Message);
             }
         }
-    
-    
-    } 
+
+
+
+
+        protected void home_about_thanks_image_loading()
+        {
+            // Retrieve image from database based on certain criteria (e.g., image ID)
+            byte[] imageData_home = RetrieveImageFromDatabase(1);
+            byte[] imageData_about = RetrieveImageFromDatabase(2);
+            byte[] imageData_thanks = RetrieveImageFromDatabase(3);
+
+            if (imageData_home != null)
+            {
+                string base64String = Convert.ToBase64String(imageData_home);
+                home_image_view.Visible = true; 
+                home_image_view.ImageUrl = "data:image;base64," + base64String;
+
+            }
+            if (imageData_about != null)
+            { 
+                string base64String = Convert.ToBase64String(imageData_about); 
+                about_image_view.Visible= true;
+                about_image_view.ImageUrl = "data:image;base64," + base64String;
+            }
+            if (imageData_thanks != null)
+            { 
+                string base64String = Convert.ToBase64String(imageData_thanks);
+                thanks_image_view.Visible = true;
+                thanks_image_view.ImageUrl = "data:image;base64," + base64String;
+            }
+        }
+
+        protected byte[] RetrieveImageFromDatabase(int imageID)
+        {
+            byte[] imageData = null;
+            string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
+            string query = "SELECT ImageData FROM information WHERE ID = @ImageID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("@ImageID", SqlDbType.Int).Value = imageID;
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        imageData = (byte[])result;
+                    }
+                }
+            }
+            return imageData;
+        }
+
+
+    }
 }
