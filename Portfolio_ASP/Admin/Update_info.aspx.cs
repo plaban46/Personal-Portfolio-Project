@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
+using System.Xml.Linq;
 
 namespace Portfolio_ASP.Admin
 {
@@ -40,8 +41,8 @@ namespace Portfolio_ASP.Admin
         protected void SaveImageToDatabase(byte[] imageData, int imageID)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
-            string query_delete = "DELETE FROM Images WHERE id = @ID";
-            string query_insert = "INSERT INTO Images (id, ImageData) VALUES (@ID, @ImageData)";
+            string query_delete = "DELETE from information WHERE id = @ID";
+            string query_insert = "INSERT INTO information (id, ImageData) VALUES (@ID, @ImageData)";
              
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -99,7 +100,7 @@ namespace Portfolio_ASP.Admin
         {
             byte[] imageData = null;
             string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
-            string query = "SELECT ImageData FROM Images WHERE ID = @ImageID";
+            string query = "SELECT ImageData from information WHERE ID = @ImageID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -217,6 +218,131 @@ namespace Portfolio_ASP.Admin
                 // Toggle flag value for next click
                 ViewState["flag_thanks"] = !flag;
             }
+        }
+
+        protected void home_des_up_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
+            string inputData = home_des_text.Text; // Get input from the text box
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO information (ID,Name,Description) VALUES (@ID,@Name,@InputData)";
+                    string query_delete = "delete from information where ID=@ID";
+                    SqlCommand command_delete = new SqlCommand(query_delete, connection);
+                    command_delete.Parameters.AddWithValue("@ID", 4);
+                    command_delete.ExecuteNonQuery();
+
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", 4);
+                    command.Parameters.AddWithValue("@InputData", inputData);
+                    command.Parameters.AddWithValue("@Name", "Home Description");
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    home_des_text.Text = string.Empty;
+                }
+
+                // Data uploaded successfully
+                Response.Write("Home Description uploaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Response.Write("An error occurred: " + ex.Message);
+            }
+        }
+
+        protected void home_des_re_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void about_up_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
+            string inputData = about_text.Text; // Get input from the text box
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO information (ID,Name,Description) VALUES (@ID,@Name,@InputData)";
+                    string query_delete = "delete from information where ID=@ID";
+                    SqlCommand command_delete = new SqlCommand(query_delete, connection);
+                    command_delete.Parameters.AddWithValue("@ID", 5);
+                    command_delete.ExecuteNonQuery();
+
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", 5);
+                    command.Parameters.AddWithValue("@InputData", inputData);
+                    command.Parameters.AddWithValue("@Name", "About Text");
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    about_text.Text = string.Empty;
+                }
+
+                // Data uploaded successfully
+                Response.Write("About Text uploaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Response.Write("An error occurred: " + ex.Message);
+            }
+        }
+
+        protected void about_re_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void thanks_text_up_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
+            string inputData = thanks_text.Text; // Get input from the text box
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO information (ID,Name,Description) VALUES (@ID,@Name,@InputData)";
+                    string query_delete = "delete from information where ID=@ID";
+                    SqlCommand command_delete = new SqlCommand(query_delete, connection);
+                    command_delete.Parameters.AddWithValue("@ID", 6);
+                    command_delete.ExecuteNonQuery();
+
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", 6);
+                    command.Parameters.AddWithValue("@InputData", inputData);
+                    command.Parameters.AddWithValue("@Name", "Thanks Message");
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    about_text.Text = string.Empty;
+                }
+
+                // Data uploaded successfully
+                Response.Write("Thanks Message uploaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Response.Write("An error occurred: " + ex.Message);
+            }
+        }
+
+        protected void thanks_text_re_Click(object sender, EventArgs e)
+        {
+
         }
     }
 } 

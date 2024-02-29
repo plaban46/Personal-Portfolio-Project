@@ -40,6 +40,34 @@
 
         <div class="form-container">
             <div> 
+                <asp:Label ID="Label_home_des" runat="server" Text="Home Description :"></asp:Label>
+                <br />
+                <asp:TextBox ID="home_des_text" runat="server"></asp:TextBox> 
+                <asp:Button ID="home_des_up" runat="server" Text="Upload Text" OnClick="home_des_up_Click" />
+<%--                <asp:Button ID="home_des_retrive" runat="server" Text="Retrieve Text" OnClick="home_des_re_Click" /> --%>
+            </div>
+        </div>
+        <div class="form-container">
+            <div> 
+                <asp:Label ID="Label_about" runat="server" Text="About Text :"></asp:Label>
+                <br />
+                <asp:TextBox ID="about_text" runat="server"></asp:TextBox> 
+                <asp:Button ID="about_up" runat="server" Text="Upload Text" OnClick="about_up_Click" />
+<%--                <asp:Button ID="about_retrive" runat="server" Text="Retrieve Text" OnClick="about_re_Click" /> --%>
+            </div>
+        </div>
+        <div class="form-container">
+            <div> 
+                <asp:Label ID="Label_thanks_des" runat="server" Text="Thanks Message :"></asp:Label>
+                <br />
+                <asp:TextBox ID="thanks_text" runat="server"></asp:TextBox> 
+                <asp:Button ID="thanks_text_up" runat="server" Text="Upload Text" OnClick="thanks_text_up_Click"  />
+<%--                <asp:Button ID="thanks_text_retrive" runat="server" Text="Retrieve Text" OnClick="thanks_text_re_Click" /> --%>
+            </div>
+        </div>
+        <div class="form-container">
+            <div> 
+                <br />
                 <asp:Label ID="Label1" runat="server" Text="Home Image :"></asp:Label>
                 <br />
                 <asp:FileUpload ID="home_image" runat="server" />
