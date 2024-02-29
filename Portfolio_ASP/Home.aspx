@@ -410,12 +410,12 @@
                 <section id="contact" class="contact contact-section">
                     <div class="container">
                         <p>hay !!</p>
-                        <h1 class="section-heading">Contribute To My <span>Research</span></h1>
+                        <h1 class="section-heading">Contribute To My <p> <span><br>Research</span></p></h1>
                     </div>
                 </section>
                  
 
-                <div class="container_feedback">
+                <div class="container_feedback"> 
                     <h2><span>Researches :: </span></h2>
                     <% foreach (var feedback in FeedbackList)
                         { %>

@@ -14,15 +14,15 @@ namespace Portfolio_ASP
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString);
 
-        public List<FeedbackItem> FeedbackList { get; set; }
+        public static List<FeedbackItem> FeedbackList { get; set; }
          
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             { 
-                PopulateFeedbackList();
+               
             }
-
+            PopulateFeedbackList();
             home_description();
             about_text();
             thanks_message();
