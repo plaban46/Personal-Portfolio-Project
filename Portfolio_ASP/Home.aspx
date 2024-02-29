@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="plaban">
 <head runat="server">
 
     <meta charset="UTF-8">
@@ -286,8 +286,7 @@
                         <h2 class="section-heading_special"><span>Slide for all Certificates</span></span> </h2>
 
                         <div class="slider">
-                            <div class="slide">
-
+                            <div class="slide"> 
                                 <span>Dean's Award</span>
                                 <img src="./images/certificates/dean_cer.jpg" alt="">
                             </div>
