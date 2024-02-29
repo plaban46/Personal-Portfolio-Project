@@ -46,7 +46,7 @@ namespace Portfolio_ASP.Admin
                     con.Open();
                 }
                 cmd.Parameters.AddWithValue("@NAME", txtItemName.Text); 
-                cmd.Parameters.AddWithValue("@IMg", "~/img/" + FileUpload1.FileName); 
+                cmd.Parameters.AddWithValue("@IMg", "./img/" + FileUpload1.FileName); 
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Achievement added successfully');</script>");

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Caching;
 using System.Web.UI;
 using System.Web.UI.WebControls; 
 
@@ -15,6 +16,7 @@ namespace Portfolio_ASP
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString);
 
         public static List<FeedbackItem> FeedbackList { get; set; }
+        public static List<AchievementItem> AchievementList { get; set; }
          
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +25,7 @@ namespace Portfolio_ASP
                
             }
             PopulateFeedbackList();
+            PopulateAchievementList();
             home_description();
             about_text();
             thanks_message();
@@ -38,14 +41,38 @@ namespace Portfolio_ASP
                 FeedbackList = new List<FeedbackItem>();
                 while (dr.Read())
                 {
-                    FeedbackList.Add(new FeedbackItem { Title = "", WriterName = dr.GetValue(0).ToString(), TopicName = dr.GetValue(1).ToString(), Description = dr.GetValue(2).ToString() });
+                    FeedbackList.Add(new FeedbackItem { Title = dr.GetValue(0).ToString(), TopicName = dr.GetValue(1).ToString(), Description = dr.GetValue(2).ToString() });
                 }
                 con.Close();    
             }catch(Exception ex)
             {
 
-            }
+            } 
+        }
+        private void PopulateAchievementList()
+        {
             
+            //AchievementList = new List<AchievementItem>();
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 1", ImageUrl = "Introduction to ASP.NET" });
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 2", ImageUrl = "ASP.NET" });
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select IName,Image from AddAchievement", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                AchievementList = new List<AchievementItem>();
+                while (dr.Read())
+                {
+                    AchievementList.Add(new AchievementItem { Name = dr.GetValue(0).ToString(), ImageUrl = dr.GetValue(1).ToString() });
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public class FeedbackItem
@@ -55,6 +82,13 @@ namespace Portfolio_ASP
             public string TopicName { get; set; }
             public string Description { get; set; }
         }
+
+        public class AchievementItem
+        {
+            public string Name { get; set; }
+            public string ImageUrl { get; set; }
+        }
+
 
         protected void hambergerButton_Click(object sender, EventArgs e)
         {

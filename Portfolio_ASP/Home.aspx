@@ -285,8 +285,16 @@
                         </span></h1>
                         <h2 class="section-heading_special"><span>Slide for all Certificates</span></span> </h2>
 
-                        <div class="slider">
-                            <div class="slide"> 
+                        <div class="slider"> 
+                             
+                            <% foreach (var achieve in AchievementList){ %>
+                            <div class="slide">
+                                <span><%= achieve.Name %></span> 
+                                <img src=<%= achieve.ImageUrl %> alt=""> 
+                            </div>
+                            <% } %> 
+
+                            <%--<div class="slide"> 
                                 <span>Dean's Award</span>
                                 <img src="./images/certificates/dean_cer.jpg" alt="">
                             </div>
@@ -330,7 +338,7 @@
                             <div class="slide">
                                 <span>Complete Ethical Hacking & Cyber Security Masterclass</span>
                                 <img src="./images/certificates/techethical.jpg" alt="">
-                            </div>
+                            </div>--%>
 
                         </div>
                         <div class="slider-dots"></div>
