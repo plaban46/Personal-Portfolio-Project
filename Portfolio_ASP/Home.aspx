@@ -144,7 +144,7 @@
                                 <h1>Plaban Das</h1>
                                 <h6>And I’m a</h6>
                                 <h2><span class="typing"></span>&nbsp;</h2>
-                                <p>My name is Plaban Das. Now I am reading at Khulna University of Engineering and Technology at computer science and engineering department.</p>
+                                <p id="home_description_text" runat="server">My name is Plaban Das. Now I am reading at Khulna University of Engineering and Technology at computer science and engineering department.</p>
                                 <div>
                                     <button id="downloadCvButton" class="btn btn-secondary">DOWNLOAD CV</button>
                                 </div>
@@ -161,7 +161,7 @@
                         <div class="flex-1 right">
                             <h1>About <span>Me</span></h1>
                             <h3>Hello! i’m Plaban Das</h3>
-                            <p>
+                            <p id="about_des_text" runat="server">
                                 Haridaskati Government Primary School was my first school where my academic journey was started. I was admitted to Kapilmuni Sahachari Vidyamandir for Secondary School Certificate Examination and I continued to Cantonment College Jashore for my intermediate college education.
                     I am proud to be part of the prestigious Khulna University of Engineering & Technology<br>
                                 <br>
@@ -391,7 +391,7 @@
                         <div class="flex-1 right">
                             <h1>Thank you <span></span></h1>
                             <h3>For exploring my portfolio </h3>
-                            <p>
+                            <p id="thanks_des_text" runat="server">
                                 Thank you for taking the time to delve into my portfolio. Each project within is a testament to my commitment, creativity, and expertise. From innovative designs to compelling narratives, each piece encapsulates my journey and aspirations.
                                 <br>
                                 <br>

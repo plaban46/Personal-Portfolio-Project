@@ -327,7 +327,8 @@ namespace Portfolio_ASP.Admin
                     command.Parameters.AddWithValue("@Name", "Thanks Message");
                     command.ExecuteNonQuery();
                     connection.Close();
-                    about_text.Text = string.Empty;
+
+                    thanks_text.Text = string.Empty;
                 }
 
                 // Data uploaded successfully

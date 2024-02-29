@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.UI.WebControls; 
 
 namespace Portfolio_ASP
 {
@@ -22,6 +22,10 @@ namespace Portfolio_ASP
             { 
                 PopulateFeedbackList();
             }
+
+            home_description();
+            about_text();
+            thanks_message();
         }
 
         private void PopulateFeedbackList()
@@ -35,6 +39,7 @@ namespace Portfolio_ASP
                 {
                     FeedbackList.Add(new FeedbackItem { Title = "", WriterName = dr.GetValue(0).ToString(), TopicName = dr.GetValue(1).ToString(), Description = dr.GetValue(2).ToString() });
                 }
+                con.Close();    
             }catch(Exception ex)
             {
 
@@ -54,5 +59,120 @@ namespace Portfolio_ASP
         {
             pnlMobileNav.CssClass = pnlMobileNav.CssClass.Contains("open") ? "mobile-nav" : "mobile-nav open";
         }
-    }
+
+        public void home_description()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT description FROM information where id=@ID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", 4);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        // Assuming there's only one row in the result set
+                        string retrievedData = reader["description"].ToString();
+
+                        // Display the retrieved data
+                        home_description_text.InnerText = retrievedData;
+                    }
+                    else
+                    {
+                        // No data found
+                        home_description_text.InnerText = "No data found.";
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Response.Write("An error occurred: " + ex.Message);
+            }
+        }
+    
+    
+        public void about_text()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT description FROM information where id=@ID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", 5);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        // Assuming there's only one row in the result set
+                        string retrievedData = reader["description"].ToString();
+
+                        // Display the retrieved data
+                        about_des_text.InnerText = retrievedData;
+                    }
+                    else
+                    {
+                        // No data found
+                        about_des_text.InnerText = "No data found.";
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Response.Write("An error occurred: " + ex.Message);
+            }
+        }
+    
+    
+        public void thanks_message()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT description FROM information where id=@ID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", 6);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        // Assuming there's only one row in the result set
+                        string retrievedData = reader["description"].ToString();
+
+                        // Display the retrieved data
+                        thanks_des_text.InnerText = retrievedData;
+                    }
+                    else
+                    {
+                        // No data found
+                        thanks_des_text.InnerText = "No data found.";
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Response.Write("An error occurred: " + ex.Message);
+            }
+        }
+    
+    
+    } 
 }
