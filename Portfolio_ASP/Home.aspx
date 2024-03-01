@@ -11,8 +11,7 @@
     <title>Plaban Das</title>
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">  
-    <script src="./js/app.js"></script>
+    <link rel="stylesheet" href="./css/home.css">   
         
     <!-- Sir, I have used this below link just only for very little works. I have documented with specific works-->  
 
@@ -24,7 +23,8 @@
     <!-- For Sliding -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-         
+    
+    <script src="./js/app.js"></script>    
 
     <style>
     body {
