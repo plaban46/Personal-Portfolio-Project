@@ -62,7 +62,7 @@ namespace Portfolio_ASP
                     {
                         while (dr.Read())
                         { 
-                            Session["UserName"] = dr.GetValue(0).ToString();
+                            Session["UserSession"] = dr.GetValue(0).ToString();
 
                             HttpCookie cookie = new HttpCookie("user_info"); 
                             cookie["username"] = txtuserid.Text.Trim();

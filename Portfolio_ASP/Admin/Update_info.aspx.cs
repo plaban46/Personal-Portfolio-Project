@@ -15,9 +15,16 @@ namespace Portfolio_ASP.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["AdminSession"] != null)
             {
-                // Optional: Populate dropdown or gridview with existing images
+                if (!IsPostBack)
+                {
+                    //BindCategory();
+                }
+            }
+            else
+            {
+                Response.Redirect("AdminLogin.aspx");
             }
         }
 

@@ -93,7 +93,7 @@
                 <nav>
                     <ul>
                         <li><a href="Topic.aspx">Writing on a topic</a></li> 
-                        <li><a href="Login.aspx">Logout</a></li>
+                        <li><a href="Logout_user.aspx">Logout</a></li>
                     </ul>
                 </nav>
 

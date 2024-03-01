@@ -13,7 +13,7 @@ namespace Portfolio_ASP.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserName"] != null)
+            if (Session["AdminSession"] != null)
             {
                 if (!IsPostBack)
                 {

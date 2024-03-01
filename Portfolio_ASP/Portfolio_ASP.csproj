@@ -71,8 +71,10 @@
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\AdminPage.aspx" />
     <Content Include="Admin\Update_info.aspx" />
+    <Content Include="Admin\Logout_admin.aspx" />
     <Content Include="Admin_User\UserPage.aspx" />
     <Content Include="Admin_User\Topic.aspx" />
+    <Content Include="Admin_User\Logout_user.aspx" />
     <Content Include="css\home.css" />
     <Content Include="css\style.css" />
     <Content Include="css\styles_sub.css" />
@@ -156,6 +158,13 @@
     <Compile Include="Admin\Update_info.aspx.designer.cs">
       <DependentUpon>Update_info.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Logout_admin.aspx.cs">
+      <DependentUpon>Logout_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Logout_admin.aspx.designer.cs">
+      <DependentUpon>Logout_admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_User\MasterPageUser.Master.cs">
       <DependentUpon>MasterPageUser.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,6 +185,13 @@
     </Compile>
     <Compile Include="Admin_User\Topic.aspx.designer.cs">
       <DependentUpon>Topic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_User\Logout_user.aspx.cs">
+      <DependentUpon>Logout_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_User\Logout_user.aspx.designer.cs">
+      <DependentUpon>Logout_user.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

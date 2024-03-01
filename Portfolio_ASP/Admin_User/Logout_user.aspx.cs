@@ -6,27 +6,28 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Portfolio_ASP.Admin_User
-{ 
-    public partial class WebForm1 : System.Web.UI.Page
+{
+    public partial class WebForm3 : System.Web.UI.Page
     {
-        static String username = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserSession"] != null)
             {
                 if (!IsPostBack)
                 {
-                     
+
                 }
-                username = Request.QueryString["username"];
-                user_lavel.Text = username; 
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("~/Login.aspx");
             }
+        }
 
-            
+        protected void btnlogout_Click(object sender, EventArgs e)
+        {
+            Session["UserSession"] = null;
+            Response.Redirect("~/Home.aspx");
         }
     }
 }

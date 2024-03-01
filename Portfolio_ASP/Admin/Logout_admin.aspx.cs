@@ -7,9 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace Portfolio_ASP.Admin
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
-        static String username = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["AdminSession"] != null)
@@ -18,15 +17,17 @@ namespace Portfolio_ASP.Admin
                 {
                     //BindCategory();
                 }
-                username = Request.QueryString["username"];
-                admin_label.Text = username;
             }
             else
             {
                 Response.Redirect("AdminLogin.aspx");
             }
+        }
 
-            
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Session["AdminSession"] = null;
+            Response.Redirect("~/Home.aspx");
         }
     }
 }

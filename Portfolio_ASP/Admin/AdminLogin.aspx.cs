@@ -49,7 +49,7 @@ namespace Portfolio_ASP.Admin
                     {
                         while (dr.Read())
                         { 
-                            Session["UserName"] = dr.GetValue(0).ToString();
+                            Session["AdminSession"] = dr.GetValue(0).ToString();
 
                             HttpCookie cookie = new HttpCookie("admin_info");
                             cookie["username"] = txtuserid.Text.Trim();
