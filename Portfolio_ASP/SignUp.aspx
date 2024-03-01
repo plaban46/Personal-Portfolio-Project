@@ -143,7 +143,7 @@
 
                                 <div class="form-group">
                                     <label>
-                                        Email:</label>
+                                        Email or Facebook:</label>
                                     <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-group">

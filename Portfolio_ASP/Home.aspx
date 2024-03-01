@@ -11,22 +11,20 @@
     <title>Plaban Das</title>
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <!-- Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap">
+    <link rel="stylesheet" href="./css/home.css">  
+    <script src="./js/app.js"></script>
+        
+    <!-- Sir, I have used this below link just only for very little works. I have documented with specific works-->  
+
     <!-- Sliding -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> 
     <!-- Text Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> 
     <!-- For Sliding -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <script src="./js/app.js"></script>
+         
 
     <style>
     body {
@@ -129,11 +127,13 @@
                                     <a href="#projects">Projects</a>
                                     <a href="#achievement">Achievements</a>
                                     <a href="#photography_id">Photography</a>
-                                    <a href="Login.aspx">Contact</a>
+<%--                                    <a href="Login.aspx">Contact</a>--%>
                                 </div> 
                             </div>
                             <div class="right">
-                                <button id="contactButton" class="btn btn-primary">Contact</button>
+                                <%--<button id="contactButton" class="btn btn-primary">Contact</button>--%>
+                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Contact" OnClick="contactButton_Click" />
+
                             </div>
                         </nav>
                         <div id="home" class="hero flex items-center justify-between">
