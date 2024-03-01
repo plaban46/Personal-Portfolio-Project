@@ -15,8 +15,19 @@ namespace Portfolio_ASP.Admin
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session.RemoveAll();
-            //Session.Remove("UserName");
+            if (!IsPostBack)
+            {
+                HttpCookie cookie = Request.Cookies["admin_info"]; 
+                if (cookie != null)
+                {
+                    txtuserid.Text = cookie["username"].ToString();
+                    txtpass.Text = cookie["password"].ToString();
+                    // Cookie are inserted
+                    Response.Write("<span style='color:red;'>Admin Cookies are inserted</span>");
+
+                } 
+            }
+            
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -37,9 +48,14 @@ namespace Portfolio_ASP.Admin
                     if (dr.HasRows)
                     {
                         while (dr.Read())
-                        {
-
+                        { 
                             Session["UserName"] = dr.GetValue(0).ToString();
+
+                            HttpCookie cookie = new HttpCookie("admin_info");
+                            cookie["username"] = txtuserid.Text.Trim();
+                            cookie["password"] = txtpass.Text.Trim();
+                            cookie.Expires = DateTime.Now.AddDays(3); //Parsistance cookies 
+                            Response.Cookies.Add(cookie);
 
                             Response.Write("<script>alert('Login success');</script>");
                             Response.Redirect("AdminPage.aspx?username=" + Server.UrlEncode(dr.GetValue(0).ToString())); 

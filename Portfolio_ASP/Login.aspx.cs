@@ -16,7 +16,20 @@ namespace Portfolio_ASP
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PortfolioCon"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack) {
+                HttpCookie cookie = Request.Cookies["user_info"];
 
+                if (cookie != null)
+                {
+                    txtuserid.Text = cookie["username"].ToString();
+                    txtpass.Text = cookie["password"].ToString();
+                    // Cookie are inserted
+                    Response.Write("<span style='color:red;'>User Cookies are inserted</span>");
+
+                }
+
+            }
+            
         }
 
         protected void register_now(object sender, EventArgs e)
@@ -51,8 +64,15 @@ namespace Portfolio_ASP
                         { 
                             Session["UserName"] = dr.GetValue(0).ToString();
 
+                            HttpCookie cookie = new HttpCookie("user_info"); 
+                            cookie["username"] = txtuserid.Text.Trim();
+                            cookie["password"] = txtpass.Text.Trim(); 
+                            cookie.Expires = DateTime.Now.AddDays(3); //Parsistance cookies 
+                            Response.Cookies.Add(cookie);
+
                             Response.Write("<script>alert('Login success');</script>");
                             Response.Redirect("~/Admin_User/UserPage.aspx?username=" + Server.UrlEncode(dr.GetValue(0).ToString()));
+                              
                         }
                     }
                     else
