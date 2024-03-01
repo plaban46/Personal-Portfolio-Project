@@ -52,7 +52,7 @@ namespace Portfolio_ASP
                             Session["UserName"] = dr.GetValue(0).ToString();
 
                             Response.Write("<script>alert('Login success');</script>");
-                            Response.Redirect("~/Admin_User/UserPage.aspx");
+                            Response.Redirect("~/Admin_User/UserPage.aspx?username=" + Server.UrlEncode(dr.GetValue(0).ToString()));
                         }
                     }
                     else

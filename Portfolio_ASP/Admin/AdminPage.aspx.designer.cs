@@ -15,12 +15,12 @@ namespace Portfolio_ASP.Admin
     {
 
         /// <summary>
-        /// Label1 control.
+        /// admin_label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label admin_label;
     }
 }

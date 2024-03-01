@@ -9,9 +9,11 @@ namespace Portfolio_ASP.Admin
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        static String username = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            username = Request.QueryString["username"];
+            admin_label.Text = username;
         }
     }
 }
