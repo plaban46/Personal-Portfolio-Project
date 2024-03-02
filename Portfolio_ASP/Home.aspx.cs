@@ -17,6 +17,7 @@ namespace Portfolio_ASP
 
         public static List<FeedbackItem> FeedbackList { get; set; }
         public static List<AchievementItem> AchievementList { get; set; }
+        public static List<ProjectItem> ProjectList { get; set; }
          
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +27,7 @@ namespace Portfolio_ASP
             }
             PopulateFeedbackList();
             PopulateAchievementList();
+            PopulateProjectList();
             home_description();
             about_text();
             thanks_message();
@@ -74,6 +76,32 @@ namespace Portfolio_ASP
 
             }
         }
+        
+        private void PopulateProjectList()
+        {
+            
+            //AchievementList = new List<AchievementItem>();
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 1", ImageUrl = "Introduction to ASP.NET" });
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 2", ImageUrl = "ASP.NET" });
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select Name,Image,Year,Description,Link from AddProject", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                ProjectList = new List<ProjectItem>();
+                while (dr.Read())
+                {
+                    ProjectList.Add(new ProjectItem { Name = dr.GetValue(0).ToString(), ImageUrl = dr.GetValue(1).ToString(), Year = dr.GetValue(2).ToString(), Description = dr.GetValue(3).ToString(), Link = dr.GetValue(4).ToString()});
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
 
         public class FeedbackItem
         {
@@ -87,6 +115,16 @@ namespace Portfolio_ASP
         {
             public string Name { get; set; }
             public string ImageUrl { get; set; }
+        }        
+        
+        public class ProjectItem
+        {
+            public string Name { get; set; }
+            public string ImageUrl { get; set; }
+            public string Year { get; set; }
+            public string Description { get; set; }
+            public string Link { get; set; } 
+            
         }
 
 

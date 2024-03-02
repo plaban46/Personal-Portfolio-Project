@@ -74,7 +74,7 @@
                     <img src="./images/logo.png" alt="">
                 </div>
 
-                <%--                <button class="hamberger" onclick="hambergerButton_Click">
+                <%--  <button class="hamberger" onclick="hambergerButton_Click">
                     <img src="./images/hamberger.png" alt="">
                 </button>--%>
 
@@ -226,7 +226,25 @@
                         <p>Browse My Recent </p>
                         <h1 class="section-heading"><span>Projects</span></h1>
                         <div class="card-wrapper">
-                            <div class="card">
+
+                        <% foreach (var proj in ProjectList){ %>
+                            
+                            <div class="card">  
+                                <div class="img-wrapper">
+                                    <img src=<%= proj.ImageUrl %> alt=""> 
+                                </div>   
+                                <div class="card-content">
+                                    <h1><span><%= proj.Name %></span></h1>
+                                    <h1><span><%= proj.Year %></span></h1>
+                                    <p><%= proj.Description %></p>
+                                    <%--<p>This app will easy our boring life by finding house in rent and at the same time this can be used for buying blank house plot. This app will also provide your favourite house in specific place with your own choice.</p>--%>
+                                    <a href="<%= proj.Link %>" target="_blank">Read More</a>
+                                </div> 
+                            </div>
+
+                            <% } %> 
+
+<%--                            <div class="card">
                                 <div class="img-wrapper">
                                     <img src="./images/project1.jpg" alt="">
                                 </div>
@@ -237,6 +255,7 @@
                                     <a href="https://github.com/plabandas/HomeZone" target="_blank">Read More</a>
                                 </div>
                             </div>
+
                             <div class="card">
                                 <div class="img-wrapper">
                                     <img src="./images/project2.jpg" alt="">
@@ -248,6 +267,7 @@
                                     <a href="https://github.com/plabandas/PocketGuard_Personal_Finance" target="_blank">Read More</a>
                                 </div>
                             </div>
+
                             <div class="card">
                                 <div class="img-wrapper">
                                     <img src="./images/project3.jpg" alt="">
@@ -259,6 +279,7 @@
                                     <a href="https://github.com/plabandas/Current_Location_App" target="_blank">Read More</a>
                                 </div>
                             </div>
+
                             <div class="card">
                                 <div class="img-wrapper">
                                     <img src="./images/project4.jpg" alt="">
@@ -269,7 +290,8 @@
                                     <p>The news portal project creates an online platform for widespread news dissemination. It includes website or app development, offering articles, videos, and multimedia content on various topics. Features like user registration, content management, comments, and social media integration aim to provide comprehensive news coverage and user engagement opportunities.</p>
                                     <a href="https://github.com/plabandas/Newspapers_USA" target="_blank">Read More</a>
                                 </div>
-                            </div>
+                            </div>--%>
+
                         </div>
                     </div>
                 </section>
