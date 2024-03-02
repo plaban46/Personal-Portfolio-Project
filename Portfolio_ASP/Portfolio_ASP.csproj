@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin\AddPhotography.aspx" />
     <Content Include="Admin\AddAchievement.aspx" />
+    <Content Include="Admin\AddTimeline.aspx" />
     <Content Include="Admin\AddProjects.aspx" />
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\AdminPage.aspx" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="Admin\AddAchievement.aspx.designer.cs">
       <DependentUpon>AddAchievement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddTimeline.aspx.cs">
+      <DependentUpon>AddTimeline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddTimeline.aspx.designer.cs">
+      <DependentUpon>AddTimeline.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AddProjects.aspx.cs">
       <DependentUpon>AddProjects.aspx</DependentUpon>

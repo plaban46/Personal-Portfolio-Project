@@ -201,6 +201,21 @@
                             <br>
                             <span>Timeline</span></h1>
                         <div class="card-wrapper">
+                            
+
+                       <% foreach (var timeline in TimelineList){ %>
+                            
+                           <div class="card">  
+                                <img src=<%= timeline.ImageUrl_Ins %> alt=""> 
+
+                                <h2> <%= timeline.Degree_Name %> </h2>
+                                <p>  <%= timeline.Institution_Name %> </p>
+                                <h3> <%= timeline.Passing_Year %> </h3>    
+                            </div>
+
+                       <% } %> 
+
+<%--                            
                             <div class="card">
                                 <img src="./images/KUET logo.png" alt="">
                                 <h2>BSc in Computer Science and Engineering</h2>
@@ -225,6 +240,8 @@
                                 <p>Kapilmuni Sahachari Vidyamandir</p>
                                 <h3>2015</h3>
                             </div>
+--%>
+
                         </div>
                     </div>
                 </section>

@@ -19,6 +19,7 @@ namespace Portfolio_ASP
         public static List<AchievementItem> AchievementList { get; set; }
         public static List<ProjectItem> ProjectList { get; set; }
         public static List<PhotographyItem> PhotographyList { get; set; }
+        public static List<TimelineItem> TimelineList { get; set; }
          
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,6 +31,7 @@ namespace Portfolio_ASP
             PopulateAchievementList();
             PopulateProjectList();
             PopulatePhotographyList();
+            PopulateTimelineList();
 
             home_description();
             about_text();
@@ -79,31 +81,6 @@ namespace Portfolio_ASP
 
             }
         }
-        private void PopulateProjectList()
-        {
-            
-            //AchievementList = new List<AchievementItem>();
-            //AchievementList.Add(new AchievementItem { Name = "Feedback 1", ImageUrl = "Introduction to ASP.NET" });
-            //AchievementList.Add(new AchievementItem { Name = "Feedback 2", ImageUrl = "ASP.NET" });
-
-
-            try
-            {
-                SqlCommand cmd = new SqlCommand("select Name,Image,Year,Description,Link from AddProject", con);
-                con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                ProjectList = new List<ProjectItem>();
-                while (dr.Read())
-                {
-                    ProjectList.Add(new ProjectItem { Name = dr.GetValue(0).ToString(), ImageUrl = dr.GetValue(1).ToString(), Year = dr.GetValue(2).ToString(), Description = dr.GetValue(3).ToString(), Link = dr.GetValue(4).ToString()});
-                }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
         private void PopulatePhotographyList()
         {
 
@@ -129,6 +106,57 @@ namespace Portfolio_ASP
 
             }
         }
+        private void PopulateProjectList()
+        {
+
+            //AchievementList = new List<AchievementItem>();
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 1", ImageUrl = "Introduction to ASP.NET" });
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 2", ImageUrl = "ASP.NET" });
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select Name,Image,Year,Description,Link from AddProject", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                ProjectList = new List<ProjectItem>();
+                while (dr.Read())
+                {
+                    ProjectList.Add(new ProjectItem { Name = dr.GetValue(0).ToString(), ImageUrl = dr.GetValue(1).ToString(), Year = dr.GetValue(2).ToString(), Description = dr.GetValue(3).ToString(), Link = dr.GetValue(4).ToString() });
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void PopulateTimelineList()
+        {
+
+            //AchievementList = new List<AchievementItem>();
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 1", ImageUrl = "Introduction to ASP.NET" });
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 2", ImageUrl = "ASP.NET" });
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select Degree_Name,Ins_Image,Pass_Year,Institution from AddTimeline", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                TimelineList = new List<TimelineItem>();
+                while (dr.Read())
+                {
+                    TimelineList.Add(new TimelineItem { Degree_Name = dr.GetValue(0).ToString(), ImageUrl_Ins = dr.GetValue(1).ToString(), Passing_Year = dr.GetValue(2).ToString(), Institution_Name = dr.GetValue(3).ToString() });
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
 
         public class FeedbackItem
         {
@@ -142,7 +170,23 @@ namespace Portfolio_ASP
         {
             public string Name { get; set; }
             public string ImageUrl { get; set; }
-        }        
+        }
+
+        public class PhotographyItem
+        {
+            public string Name { get; set; }
+            public string ImageUrl { get; set; }
+        }
+
+
+        public class TimelineItem
+        {
+            public string Degree_Name { get; set; }
+            public string ImageUrl_Ins { get; set; }
+            public string Passing_Year { get; set; }
+            public string Institution_Name { get; set; } 
+            
+        }
         
         public class ProjectItem
         {
@@ -152,12 +196,6 @@ namespace Portfolio_ASP
             public string Description { get; set; }
             public string Link { get; set; } 
             
-        }
-
-        public class PhotographyItem
-        {
-            public string Name { get; set; }
-            public string ImageUrl { get; set; }
         }
 
 

@@ -94,6 +94,7 @@
                         <li><a href="AddAchievement.aspx">Achievements</a></li> 
                         <li><a href="AddProjects.aspx">Projects</a></li> 
                         <li><a href="AddPhotography.aspx">Photography</a></li> 
+                        <li><a href="AddTimeline.aspx">Timeline</a></li> 
                         <li><a href="Logout_admin.aspx">Logout</a></li>
                     </ul>
                 </nav>
