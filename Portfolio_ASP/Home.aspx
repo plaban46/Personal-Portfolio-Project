@@ -65,6 +65,14 @@
 
 </style>
 
+<script type="text/javascript">
+    function openInNewTab(url) {
+    var win = window.open(url, '_blank');
+    win.focus();
+    return false; // Prevent the default postback action of the button
+}
+</script> 
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -94,7 +102,7 @@
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#achievement">Achievements</a></li>
                         <li><a href="#photography_id">Photography</a></li>
-                        <li><a href="Login.aspx">Contact</a></li>
+                        <li><a href="Login.aspx" target="_blank">Contact</a></li>
                     </ul> 
                 </asp:Panel>
                  
@@ -132,7 +140,7 @@
                             </div>
                             <div class="right">
                                 <%--<button id="contactButton" class="btn btn-primary">Contact</button>--%>
-                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Contact" OnClick="contactButton_Click" />
+                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Contact" OnClientClick="openInNewTab('Login.aspx');"  OnClick="contactButton_Click" />
 
                             </div>
                         </nav>

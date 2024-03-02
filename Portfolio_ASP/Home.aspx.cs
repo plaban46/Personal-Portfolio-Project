@@ -334,7 +334,7 @@ namespace Portfolio_ASP
 
         protected void contactButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Login.aspx");
+            //Response.Redirect("~/Login.aspx"); //Handled By Javascript
         }
     }
 }
