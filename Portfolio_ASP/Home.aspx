@@ -375,7 +375,19 @@
                         <p>Check Out My</p>
                         <h1 class="section-heading"><span>Photography</span></h1>
                         <div class="card-wrapper">
-                            <div class="card">
+                            
+                        <% foreach (var photo in PhotographyList){ %>
+                            <div class="card"> 
+
+                                <div class="overlay">
+                                    <span><%= photo.Name %></span>
+                                </div> 
+                                <img src=<%= photo.ImageUrl %> alt=""> 
+
+                            </div>
+                            <% } %> 
+                            
+                           <%-- <div class="card">
                                 <div class="overlay">
                                     <span>River view, Bangladesh</span>
                                 </div>
@@ -410,7 +422,9 @@
                                     <span>My Favourite Flower - 2k17</span>
                                 </div>
                                 <img src="./images/photography/pho6.jpg" alt="">
-                            </div>
+                            </div>--%>
+
+
                         </div>
                     </div>
                 </section>

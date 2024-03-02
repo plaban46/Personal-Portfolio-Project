@@ -18,6 +18,7 @@ namespace Portfolio_ASP
         public static List<FeedbackItem> FeedbackList { get; set; }
         public static List<AchievementItem> AchievementList { get; set; }
         public static List<ProjectItem> ProjectList { get; set; }
+        public static List<PhotographyItem> PhotographyList { get; set; }
          
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,8 @@ namespace Portfolio_ASP
             PopulateFeedbackList();
             PopulateAchievementList();
             PopulateProjectList();
+            PopulatePhotographyList();
+
             home_description();
             about_text();
             thanks_message();
@@ -76,7 +79,6 @@ namespace Portfolio_ASP
 
             }
         }
-        
         private void PopulateProjectList()
         {
             
@@ -94,6 +96,31 @@ namespace Portfolio_ASP
                 while (dr.Read())
                 {
                     ProjectList.Add(new ProjectItem { Name = dr.GetValue(0).ToString(), ImageUrl = dr.GetValue(1).ToString(), Year = dr.GetValue(2).ToString(), Description = dr.GetValue(3).ToString(), Link = dr.GetValue(4).ToString()});
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void PopulatePhotographyList()
+        {
+
+            //AchievementList = new List<AchievementItem>();
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 1", ImageUrl = "Introduction to ASP.NET" });
+            //AchievementList.Add(new AchievementItem { Name = "Feedback 2", ImageUrl = "ASP.NET" });
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select IName,Image from AddPhotography", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                PhotographyList = new List<PhotographyItem>();
+                while (dr.Read())
+                {
+                    PhotographyList.Add(new PhotographyItem { Name = dr.GetValue(0).ToString(), ImageUrl = dr.GetValue(1).ToString() });
                 }
                 con.Close();
             }
@@ -125,6 +152,12 @@ namespace Portfolio_ASP
             public string Description { get; set; }
             public string Link { get; set; } 
             
+        }
+
+        public class PhotographyItem
+        {
+            public string Name { get; set; }
+            public string ImageUrl { get; set; }
         }
 
 
