@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageUser.master.cs" Inherits="Portfolio_ASP.Admin_User.MasterPageUser" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>User Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            color: #333; /* Change font color */
+        }
+
+        header {
+            background-color: #4CAF50; /* Eye-catching green color */
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            height: 300px;
+            background: #FFC107; /* Eye-catching yellow color */
+            padding: 20px;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 1;
+                display: block;
+            }
+
+                nav ul li:hover {
+                    background-color: #FFEB3B; /* Lighter yellow on hover */
+                    color: black; /* Change font color on hover */
+                    padding: 11px;
+                }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 80%;
+            background-color: #2196F3; /* Eye-catching blue color */
+            color: white;
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: #FF5722; /* Eye-catching orange color */
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+
+                nav ul li:hover {
+                    background-color: transparent; /* Change hover background color */
+                    color: #333; /* Change hover font color */
+                }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header>
+                <h2>User Dashboard </h2>
+            </header>
+            <section>
+                <nav>
+                    <ul>
+                        <li><a href="Topic.aspx">Writing on a topic</a></li> 
+                        <li><a href="Logout_user.aspx">Logout</a></li>
+                    </ul>
+                </nav>
+
+                <article>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </article>
+            </section>
+            <footer>
+                <p>Copyright &copy; 2024 Plaban Das</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
