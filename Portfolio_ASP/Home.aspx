@@ -140,7 +140,7 @@
                             </div>
                             <div class="right">
                                 <%--<button id="contactButton" class="btn btn-primary">Contact</button>--%>
-                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Contact" OnClientClick="openInNewTab('Login.aspx');"  OnClick="contactButton_Click" />
+                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Review" OnClientClick="openInNewTab('Login.aspx');"  OnClick="contactButton_Click" />
 
                             </div>
                         </nav>
