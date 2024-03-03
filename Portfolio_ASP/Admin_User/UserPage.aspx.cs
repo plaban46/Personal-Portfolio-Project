@@ -23,7 +23,7 @@ namespace Portfolio_ASP.Admin_User
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("~/Login.aspx");
             }
 
             
